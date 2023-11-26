@@ -129,6 +129,7 @@ const errors = ref([]);
 const updateProfile = async () => {
     try {
         infoSuccess.value = '';
+        errors.value = [];
         const data = new FormData();
         data.append('name', profile.value.name);
         data.append('email', profile.value.email);
@@ -148,6 +149,7 @@ const updateProfile = async () => {
 const updatePassword = async () => {
     try {
         passwordSuccess.value = '';
+        errors.value = [];
         const data = new FormData();
         data.append('current_password', password.value.current_password);
         data.append('password', password.value.password);
