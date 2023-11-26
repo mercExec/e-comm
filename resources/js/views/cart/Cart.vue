@@ -150,10 +150,18 @@
                         </div>
 
                         <div class="mb-5">
-                            <button @click.prevent="submit" v-if="auth.user"
-                                class="flex w-full items-center justify-center rounded-md bg-primary py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90">
-                                Checkout
-                            </button>
+                            <div v-if="auth.user">
+                                <button @click.prevent="submit"
+                                    class="flex w-full items-center justify-center rounded-md bg-primary py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90">
+                                    Checkout
+                                </button>
+                                <div class="text-xs text-gray-500">
+                                    -Test Card: 4242 4242 4242 4242<br>
+                                    -Enter any random date in the future for the credit card expiration date<br>
+                                    -Enter any random 3 digits for the CVC<br>
+                                    -Enter any random email & name
+                                </div>
+                            </div>
                             <button v-else
                             class="flex w-full items-center justify-center rounded-md bg-primary py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90">
                             <router-link :to="{name: 'login'}">
